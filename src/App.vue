@@ -1,7 +1,17 @@
 <template>
-<h1>Discerart</h1>
+    <the-header></the-header>
     <router-view></router-view>
 </template>
+
+<script>
+import TheHeader from './components/layout/TheHeader.vue';
+
+export default {
+    components: {
+        TheHeader
+    }
+}
+</script>
 
 <style>
 @font-face {
@@ -32,10 +42,16 @@
 body {
     background-color: var(--app-yellow);
     color: var(--app-green);
+    font-family: var(--main-font);
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
 }
 
 h1 {
     font-family: var(--secondary-font);
-    
 }
 </style>
