@@ -21,3 +21,14 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+*.pdf
+
+#jsons and configs
+.prettierrc
+babel.config.js
+package.json
+package-lock.json
+.browserslistrc
+.eslintrc.js
+
+
