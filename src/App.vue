@@ -43,9 +43,10 @@ body {
     background-color: var(--app-yellow);
     color: var(--app-green);
     font-family: var(--main-font);
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
+
 
 ul {
     list-style: none;
@@ -53,5 +54,17 @@ ul {
 
 h1 {
     font-family: var(--secondary-font);
+    text-align: center;
+}
+
+/* desktop and tablets*/ 
+@media screen and (min-width: 800px) {
+    body {
+        margin: 0 150px;
+    }
+
+    h1 {
+        text-align: left;
+    }
 }
 </style>

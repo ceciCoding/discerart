@@ -14,11 +14,9 @@ const router = createRouter({
     routes: [
         { path: '/', component: AdsList },
         { path: '/ad/:id', component: AdDetails },
-        {
-            path: '/user/:id', component: UserDetails, children: [
+        { path: '/user/:id', component: UserDetails, children: [
                 { path: '/contact', component: ContactUser },
-                { path: '/new-add', component: NewAd },
-
+                { path: '/new-add', component: NewAd }
             ]
         },
         { path: '/register', component: UserRegistration },
