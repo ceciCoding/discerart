@@ -7,7 +7,7 @@
             :type="typeOfInpt" 
             :name="name" 
             :placeholder="inptPlaceholder">
-        <span v-if="name === 'search'" class="material-icons">search</span>
+        <span v-if="isSearchBar" class="material-icons">search</span>
     </div>
 </template>
 
@@ -27,7 +27,13 @@ export default {
             type: String,
             required: false
         }
-}
+    },
+
+    computed: {
+        isSearchBar() {
+            return this.name === 'search';
+        }
+    }
 }
 </script>
 
@@ -45,6 +51,7 @@ input {
     margin-bottom: 2rem;
     width: 100%;
     font-family: inherit;
+    color: inherit;
 }
 
 .material-icons {
