@@ -12,5 +12,8 @@
     -moz-box-shadow: 5px 5px 0px 0px var(--app-green);
     box-shadow: 5px 5px 0px 0px var(--app-green);
     margin-bottom: 2rem;
+    display: flex;
+    flex-flow: column nowrap; 
 }
+
 </style>

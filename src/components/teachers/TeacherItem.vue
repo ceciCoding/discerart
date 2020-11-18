@@ -22,10 +22,10 @@ export default {
     props: ['id', 'name', 'area', 'description', 'fee'],
     computed: {
         contactTeacherLink() {
-            return this.$route.path + '/' + this.id + '/contact';
+            return this.$route.path + 'teachers/' + this.id + '/contact';
         },
         teacherDetailsLink() {
-            return this.$route.path  + '/' + this.id;
+            return this.$route.path  + 'teachers/' + this.id;
         }
     }
 }
@@ -37,10 +37,24 @@ a {
     color: inherit;
 }
 
+.teacher-item h5 {
+    margin-top: 0.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.teacher-item h3 {
+    margin-bottom: .3rem;
+}
+
+.teacher-item p {
+    margin-top: 0;
+}
+
 .teacher-item {
     width: 320px;
     height: 400px;
     position: relative;
+    display: flex;
 }
 
 .teacher-descr {
@@ -50,8 +64,8 @@ a {
 
 .img-container {
     position: absolute;
-    right: 2.5rem;
-    top: 2rem;
+    right: 2rem;
+    top: 1.8rem;
     width: 50px;
 }
 
