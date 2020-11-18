@@ -35,8 +35,8 @@ a {
 }
 
 .teacher-item {
-    width: 350px;
-    height: 450px;
+    width: 320px;
+    height: 400px;
 }
 
 .teacher-descr {

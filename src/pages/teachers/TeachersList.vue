@@ -1,6 +1,9 @@
 <template>
-    <section>
+    <section class="hero">
         <base-input name="search" inpt-placeholder="search"></base-input>
+        <div>
+            <img src="../../assets/04.png" alt="drawing of a color palette">
+        </div>
     </section>
     <section class="teachers-container">
         <h1>Teachers</h1>
@@ -38,17 +41,27 @@ export default {
 
 <style scoped>
 .teachers-container {
-    grid-column: 4/13;
+    grid-column: 5/13;
     
 }
 
 .teachers-container ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
 }
 
 .teachers-container h1 {
     margin-bottom: 4rem;
     margin-top: 0;
 }
+
+.hero {
+    grid-column: 1/4;
+}
+
+.hero img {
+    max-width: 100%;
+}
+
 </style>

@@ -1,9 +1,13 @@
 <template>
-    <div>
+    <div class="form-control">
         <label :for="name">
             <slot></slot>
         </label>
-        <input :type="typeOfInpt" :name="name" :placeholder="inptPlaceholder">
+        <input 
+            :type="typeOfInpt" 
+            :name="name" 
+            :placeholder="inptPlaceholder">
+        <span v-if="name === 'search'" class="material-icons">search</span>
     </div>
 </template>
 
@@ -28,6 +32,10 @@ export default {
 </script>
 
 <style scoped>
+.form-control {
+    position: relative;
+}
+
 input {
     background-color: var(--app-white);
     padding: 1rem;
@@ -37,5 +45,12 @@ input {
     margin-bottom: 2rem;
     width: 100%;
     font-family: inherit;
+}
+
+.material-icons {
+    position: absolute;
+    right: 1rem;
+    top: .6rem;
+    cursor: pointer;
 }
 </style>
