@@ -1,9 +1,7 @@
 <template>
     <section class="hero">
         <base-input name="search" inpt-placeholder="search"></base-input>
-        <div>
-            <img src="../../assets/04.png" alt="drawing of a color palette">
-        </div>
+        <hero-image></hero-image>
     </section>
     <section class="teachers-container">
         <h1>Teachers</h1>
@@ -60,8 +58,5 @@ export default {
     grid-column: 1/4;
 }
 
-.hero img {
-    max-width: 100%;
-}
 
 </style>
