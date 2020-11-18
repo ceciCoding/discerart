@@ -45,6 +45,7 @@ body {
     font-family: var(--main-font);
     padding: 2rem 0;
     margin: 0;
+    margin-bottom: 5rem;
 }
 
 
@@ -71,6 +72,7 @@ h3 {
 @media screen and (min-width: 800px) {
     body {
         padding: 0 150px;
+        padding-right: 50px;
         /* padding-left: 250px; */
         max-width: 2000px;
         margin: 2rem auto;

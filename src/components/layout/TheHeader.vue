@@ -54,6 +54,7 @@ header {
     height: 4rem;
     width: 100vw;
     padding: 0 3rem;
+    z-index: 20;
 }
 
 .menu-items-container {

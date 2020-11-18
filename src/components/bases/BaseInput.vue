@@ -40,6 +40,8 @@ export default {
 <style scoped>
 .form-control {
     position: relative;
+    display: flex;
+    justify-content: flex-start;
 }
 
 input {
@@ -49,15 +51,26 @@ input {
     -moz-box-shadow: 5px 5px 0px 0px var(--app-green);
     box-shadow: 5px 5px 0px 0px var(--app-green);
     margin-bottom: 2rem;
-    width: 100%;
+    width: 80%;
+    margin: 0 auto;
     font-family: inherit;
     color: inherit;
 }
 
 .material-icons {
     position: absolute;
-    right: 1rem;
+    right: 12%;
     top: .6rem;
     cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+    input {
+        width: 100%;
+    }
+
+    .material-icons {
+        right: 1rem;
+    }
 }
 </style>

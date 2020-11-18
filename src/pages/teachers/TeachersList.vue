@@ -1,7 +1,9 @@
 <template>
     <section class="hero">
-        <base-input name="search" inpt-placeholder="search"></base-input>
         <hero-image></hero-image>
+        <div id="search">
+            <base-input name="search" inpt-placeholder="search"></base-input>
+        </div>
     </section>
     <section class="teachers-container">
         <h1>Teachers</h1>
@@ -38,15 +40,10 @@ export default {
 </script>
 
 <style scoped>
-.teachers-container {
-    grid-column: 5/13;
-    
-}
-
 .teachers-container ul {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .teachers-container h1 {
@@ -56,6 +53,33 @@ export default {
 
 .hero {
     grid-column: 1/4;
+}
+
+#search {
+    margin: 3rem 0;
+}
+
+@media screen and (min-width: 800px) {
+    .hero {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+    #search {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+
+    .teachers-container {
+        grid-column: 5/13;
+    
+}
+
+    .teachers-container ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
 }
 
 

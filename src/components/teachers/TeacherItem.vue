@@ -32,6 +32,14 @@ export default {
 </script>
 
 <style scoped>
+.teacher-item {
+    width: 80%;
+    height: auto;
+    position: relative;
+    display: flex;
+    margin-bottom: 1.5rem;
+} 
+
 a {
     text-decoration: none;
     color: inherit;
@@ -50,13 +58,6 @@ a {
     margin-top: 0;
 }
 
-.teacher-item {
-    width: 320px;
-    height: 400px;
-    position: relative;
-    display: flex;
-}
-
 .teacher-descr {
     height: 150px;
     overflow-y: scroll;
@@ -72,6 +73,12 @@ a {
 .img-container img {
     max-width: 100%;
     clip-path: circle();
+}
+
+@media screen and (min-width: 800px) {
+    .teacher-item {
+        width: 320px;
+    }
 }
 
 </style>
