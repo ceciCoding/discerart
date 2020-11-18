@@ -8,8 +8,8 @@
                         <p>{{ description }}</p>
                     </div>
                     <h4>{{ fee }}€/hour</h4>
+                    <base-button link :to="contactTeacherLink">Contact</base-button>
                 </base-card>
-                <!-- agregar botón con router link bind to contactTeacherLink-->
             </router-link>
     </li>
 </template>

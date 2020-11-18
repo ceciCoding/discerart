@@ -61,6 +61,12 @@ h1 {
     text-align: center;
 }
 
+h3 {
+    font-family: var(--secondary-font);
+    font-weight: normal;
+    margin-top: 0;
+}
+
 /* desktop and tablets*/ 
 @media screen and (min-width: 800px) {
     body {
