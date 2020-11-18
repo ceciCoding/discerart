@@ -71,7 +71,7 @@ h3 {
 @media screen and (min-width: 800px) {
     body {
         padding: 0 150px;
-        padding-left: 250px;
+        /* padding-left: 250px; */
         max-width: 2000px;
         margin: 2rem auto;
     }

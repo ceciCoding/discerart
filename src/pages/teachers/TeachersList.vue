@@ -1,6 +1,6 @@
 <template>
     <section>
-        FILTERS
+        <base-input name="search" inpt-placeholder="search"></base-input>
     </section>
     <section class="teachers-container">
         <h1>Teachers</h1>

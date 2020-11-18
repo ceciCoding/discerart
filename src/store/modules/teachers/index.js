@@ -20,6 +20,13 @@ export default {
                     area: 'Music',
                     description: 'Litter box is life chase mice peer out window, chatter at birds, lure them to mouth, so good now the other hand, too if it fits, i sits. Toy mouse squeak roll over step on your keyboard while you\'re gaming and then turn in a circle, but run outside as soon as door open, or meow all night having their mate disturbing sleeping humans purr for no reason.',
                     fee: 25
+                },
+                {
+                    id: 't3',
+                    name: 'Alex Kingston',
+                    area: 'Writting',
+                    description: 'Jump on human and sleep on her all night long be long in the bed, purr in the morning and then give a bite to every human around for not waking up request food.',
+                    fee: 28
                 }
             ]
         }
