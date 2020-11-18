@@ -3,7 +3,12 @@ import getters from './getters.js'
 import actions from './actions.js';
 
 export default {
-    state() { },
+    namespaced: true,
+    state() {
+        return {
+            users: 
+        }
+    },
     mutations,
     actions,
     getters

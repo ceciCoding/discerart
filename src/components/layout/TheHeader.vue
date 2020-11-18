@@ -14,14 +14,14 @@
                         <span class="item-name">Inbox</span>
                     </router-link>
                 </li>
-                <li>
+                <!-- <li>
                      <router-link to="/new-add">
                         <span class="material-icons">post_add</span>
                         <span class="item-name">New Ad</span>
                     </router-link>
-                </li>
+                </li> -->
                 <li>
-                     <router-link to="/user/:id">
+                     <router-link to="/register">
                         <span class="material-icons">perm_identity</span>
                         <span class="item-name">Profile</span>
                     </router-link>
@@ -70,7 +70,7 @@ header {
 
     .menu-items-container {
         flex-flow: column nowrap;
-        height: 25vh;
+        height: 30vh;
     }
 }
 </style>

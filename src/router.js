@@ -1,25 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import AdDetails from './pages/ads/AdDetails.vue';
-import AdsList from './pages/ads/AdsList.vue';
-import NewAd from './pages/ads/NewAd.vue';
-import ContactUser from './pages/messages/ContactUser.vue';
+import TeacherDetails from './pages/teachers/TeacherDetails.vue';
+import TeachersList from './pages/teachers/TeachersList.vue';
+import ContactTeacher from './pages/messages/ContactTeacher.vue';
 import ReceivedMessages from './pages/messages/ReceivedMessages.vue';
-import UserRegistration from './pages/users/UserRegistration.vue';
-import UserDetails from './pages/users/UserDetails.vue';
+import TeacherRegistration from './pages/teachers/TeacherRegistration.vue';
 import NotFound from './pages/NotFound.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: AdsList },
-        { path: '/ad/:id', component: AdDetails },
-        { path: '/user/:id', component: UserDetails, children: [
-                { path: '/contact', component: ContactUser },
-                { path: '/new-add', component: NewAd }
+        { path: '/', component: TeachersList },
+        { path: '/teacher/:id', component: TeacherDetails, children: [
+                { path: '/contact', component: ContactTeacher },
             ]
         },
-        { path: '/register', component: UserRegistration },
+        { path: '/register', component: TeacherRegistration },
         { path: '/messages', component: ReceivedMessages },
         { path: '/:notFound(.*)', component: NotFound }
     ]
