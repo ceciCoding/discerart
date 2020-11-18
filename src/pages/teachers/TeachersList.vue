@@ -2,7 +2,8 @@
     <section>
         FILTERS
     </section>
-    <section>
+    <section class="teachers-container">
+        <h1>Teachers</h1>
         <ul v-if="hasTeachers">
                 <teacher-item v-for="teacher in filteredTeachers" 
                     :key="teacher.id" 
@@ -34,3 +35,20 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.teachers-container {
+    grid-column: 4/13;
+    
+}
+
+.teachers-container ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.teachers-container h1 {
+    margin-bottom: 4rem;
+    margin-top: 0;
+}
+</style>

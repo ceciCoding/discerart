@@ -43,7 +43,7 @@ body {
     background-color: var(--app-yellow);
     color: var(--app-green);
     font-family: var(--main-font);
-    padding: 0;
+    padding: 2rem 0;
     margin: 0;
 }
 
@@ -70,7 +70,16 @@ h3 {
 /* desktop and tablets*/ 
 @media screen and (min-width: 800px) {
     body {
-        margin: 0 150px;
+        padding: 0 150px;
+        padding-left: 250px;
+        max-width: 2000px;
+        margin: 2rem auto;
+    }
+
+    #app {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* gap: 2rem; */
     }
 
     h1 {

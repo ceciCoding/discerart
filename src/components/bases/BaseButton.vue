@@ -31,5 +31,6 @@ button, a {
     font-family: var(--secondary-font);
     padding: .5rem 2rem;
     border-radius: 25px;
+    margin: 0 auto;
 }
 </style>
