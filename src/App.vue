@@ -52,6 +52,10 @@ ul {
     list-style: none;
 }
 
+p {
+    line-height: 2rem;
+}
+
 h1 {
     font-family: var(--secondary-font);
     text-align: center;
