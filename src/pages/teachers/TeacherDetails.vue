@@ -1,6 +1,6 @@
 <template>
-    <h1>Personal Info</h1>
-    <rotuer-view></rotuer-view>
-    <button><router-link to="/user/:id/contact">Contact</router-link></button>
+    <router-view></router-view>
+    <h1>Teacher Details</h1>
+    <button><router-link to="/teachers/c1/contact">Contact</router-link></button>
 </template>
 
