@@ -1,14 +1,16 @@
 <template>
     <li>
-        <router-link :to="teacherDetailsLink">
-            <h3>{{ name }}</h3>
-            <h5>{{ area }}</h5>
-            <div>
-                <p>{{ description }}</p>
-            </div>
-            <h4>{{ fee }}€/hour</h4>
-            <!-- agregar botón con router link bind to contactTeacherLink-->
-        </router-link>
+            <router-link :to="teacherDetailsLink">
+                <base-card>
+                    <h3>{{ name }}</h3>
+                    <h5>{{ area }}</h5>
+                    <div>
+                        <p>{{ description }}</p>
+                    </div>
+                    <h4>{{ fee }}€/hour</h4>
+                </base-card>
+                <!-- agregar botón con router link bind to contactTeacherLink-->
+            </router-link>
     </li>
 </template>
 
