@@ -3,6 +3,7 @@
         <hero-image></hero-image>
         <div id="search">
             <base-input name="search" inpt-placeholder="search"></base-input>
+            <filter-teachers @change-filter="setFilters"></filter-teachers>
         </div>
     </section>
     <section class="teachers-container">
@@ -23,17 +24,51 @@
 
 <script>
 import TeacherItem from '../../components/teachers/TeacherItem.vue';
+import FilterTeachers from '../../components/teachers/FilterTeachers.vue';
 
 export default {
     components: {
-        TeacherItem
+        TeacherItem,
+        FilterTeachers
     },
+
+    data() {
+        return {
+            activeFilters:  {
+                music: true,
+                plastic: true,
+                writting: true,
+                acting: true
+            }            
+        }
+    },
+
     computed: {
         filteredTeachers() {
-            return this.$store.getters['teachers/teachers'];
+            const teachers = this.$store.getters['teachers/teachers'];
+            return teachers.filter(teacher => {
+                if (this.activeFilters.music && teacher.area === 'Music') {
+                    return true;
+                }
+                else if (this.activeFilters.writting && teacher.area === 'Writting') {
+                    return true;
+                }
+                else if (this.activeFilters.acting && teacher.area === 'Acting') {
+                    return true;
+                }
+                else if (this.activeFilters.plastic && teacher.area === 'Plastic Arts') {
+                    return true;
+                } else return false;
+            })
         },
         hasTeachers() {
             return this.$store.getters['teachers/hasTeachers']
+        }
+    },
+
+    methods: {
+        setFilters(updatedFilters) {
+            this.activeFilters = updatedFilters;
         }
     }
 }
