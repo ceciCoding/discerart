@@ -53,7 +53,7 @@ export default {
 .filters-container {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     margin-top: 1rem;
 }

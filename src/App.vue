@@ -72,6 +72,32 @@ label {
     font-size: .7rem;
 }
 
+.form-control {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.form-control label {
+    font-size: .8rem;
+    margin-bottom: .3rem;
+}
+
+.form-control input,
+.form-control textarea {
+    background-color: var(--app-white);
+    padding: 1rem;
+    -webkit-box-shadow: 5px 5px 0px 0px var(--app-green);
+    -moz-box-shadow: 5px 5px 0px 0px var(--app-green);
+    box-shadow: 5px 5px 0px 0px var(--app-green);
+    margin-bottom: 2rem;
+    font-family: inherit;
+    color: inherit;
+}
+
 /* desktop and tablets*/ 
 @media screen and (min-width: 800px) {
     body {

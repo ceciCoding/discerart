@@ -2,7 +2,11 @@
     <section class="hero">
         <hero-image></hero-image>
         <div id="search">
-            <base-input name="search" inpt-placeholder="search"></base-input>
+            <!-- <base-input name="search" inpt-placeholder="search"></base-input>-->
+            <div class="form-control">
+                <input type="text" id="search-inpt">
+                <span class="material-icons">search</span>
+            </div>
             <filter-teachers @change-filter="setFilters"></filter-teachers>
         </div>
     </section>
@@ -90,7 +94,20 @@ export default {
 }
 
 #search {
-    margin: 3rem 0;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    width: 80%;
+}
+
+#search-inpt {
+    margin-bottom: .5rem;
+}
+
+.material-icons {
+    position: absolute;
+    right: 5%;
+    top: .6rem;
+    cursor: pointer;
 }
 
 
@@ -103,8 +120,7 @@ export default {
     }
 
     #search {
-        margin: 0;
-        margin-bottom: 3rem;
+        width: 100%;
     }
 
     .teachers-container {

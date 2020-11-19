@@ -1,20 +1,17 @@
 <template>
     <form action="" @submit.prevent="submitForm">
-        <base-input 
-            name="name" 
-            labelText="Name" 
-            v-model="name"></base-input>
-        <base-input 
-            name="description" 
-            typeOfInpt="textarea" 
-            rows="5" 
-            labelText="Your ad's description" 
-            v-model="description"></base-input> 
-        <base-input 
-            name="fee" 
-            typeOfInpt="number" 
-            labelText="Your hourly fee" 
-            v-model.number="fee"></base-input>
+        <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" v-model="name">
+        </div>
+         <div class="form-control">
+            <label for="name">Tell potential students about you and your work</label>
+            <textarea rows="5" name="name" v-model="description"></textarea>
+        </div>
+         <div class="form-control">
+            <label for="name">Your hourly fee</label>
+            <input type="number" name="name" v-model.number="fee">
+        </div>
         <div>
             <label for="picture">Your profile picture</label>
             <input type="file" name="picture" accept=".jpg, .png, .webp, .jpeg">
@@ -49,7 +46,7 @@ export default {
             name: '',
             description: '',
             fee: null,
-            area: ''            
+            area: '',  
         }
     },
 
