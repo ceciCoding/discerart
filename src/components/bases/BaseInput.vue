@@ -1,7 +1,7 @@
 <template>
     <div class="form-control">
-        <label :for="name">
-            <slot></slot>
+        <label :for="name" v-if="!isSearchBar">
+            {{ labelText }}
         </label>
         <input 
             :type="typeOfInpt" 
@@ -24,6 +24,10 @@ export default {
             default: 'text'
         },
         inptPlaceholder: {
+            type: String,
+            required: false
+        },
+        labelText: {
             type: String,
             required: false
         }

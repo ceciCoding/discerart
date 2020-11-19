@@ -80,7 +80,7 @@ h3 {
     #app {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
-        /* gap: 2rem; */
+        margin: 0 auto;
     }
 
     h1 {

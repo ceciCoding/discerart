@@ -77,8 +77,10 @@ a {
 
 @media screen and (min-width: 800px) {
     .teacher-item {
-        width: 320px;
-    }
+        width: auto;
+        max-width: 320px;
+        margin-bottom: 0;
+    } 
 }
 
 </style>

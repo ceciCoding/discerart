@@ -78,7 +78,7 @@ header {
     .menu-items-container {
         flex-flow: column nowrap;
         height: 20vh;
-        margin-top: 2rem;
+        margin-top: 3rem;
     }
 }
 </style>

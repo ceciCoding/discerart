@@ -99,6 +99,7 @@ export default {
         display: flex;
         flex-flow: column-reverse;
         justify-content: flex-end;
+        margin-top: 1rem;
     }
 
     #search {
@@ -112,9 +113,12 @@ export default {
 }
 
     .teachers-container ul {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.2rem;
+        /* display: grid;
+        grid-auto-columns: auto;
+        gap: 1.2rem; */
+        display: flex;
+        flex-flow: row wrap;
+        gap: 2rem;
     }
 
     .teachers-container h1 {
