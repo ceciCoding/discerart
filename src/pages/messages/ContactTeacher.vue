@@ -38,7 +38,13 @@ export default {
                 this.formIsValid = false;
                 return;
             } 
-            
+            this.$store.dispatch('messages/contactTeacher', {
+                name: this.name,
+                email: this.email,
+                message: this.message,
+                teacherId: this.$route.params.id
+            });
+            this.$router.replace('/');
         }
     }
 }

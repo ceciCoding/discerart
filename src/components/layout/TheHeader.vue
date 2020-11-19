@@ -35,11 +35,8 @@ export default {
         isTeacher() {
             return this.$store.getters['teachers/isTeacher'];
         },
-        userId() {
-            return this.$store.getters['teachers/getUserId']
-        },
         profileLink() {
-            return '/teachers/' + this.userId;
+            return '/teachers/' + this.$route.params.id;
         }
     }
 }
