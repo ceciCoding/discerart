@@ -82,8 +82,7 @@ export default {
 }
 
 .teachers-container h1 {
-    margin-bottom: 4rem;
-    margin-top: 0;
+    display: none;
 }
 
 .hero {
@@ -94,10 +93,12 @@ export default {
     margin: 3rem 0;
 }
 
+
 @media screen and (min-width: 800px) {
     .hero {
         display: flex;
         flex-flow: column-reverse;
+        justify-content: flex-end;
     }
 
     #search {
@@ -115,6 +116,10 @@ export default {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.2rem;
     }
+
+    .teachers-container h1 {
+        display: inline-block;
+}
 }
 
 

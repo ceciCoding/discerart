@@ -45,7 +45,7 @@ body {
     font-family: var(--main-font);
     padding: 2rem 0;
     margin: 0;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 
@@ -73,7 +73,6 @@ h3 {
     body {
         padding: 0 150px;
         padding-right: 50px;
-        /* padding-left: 250px; */
         max-width: 2000px;
         margin: 2rem auto;
     }

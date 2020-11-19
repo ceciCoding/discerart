@@ -1,20 +1,22 @@
 <template>
-    <span class="filter-option">
-        <input type="checkbox" id="music" checked @change="setFilter">
-        <label for="music">Music</label>
-    </span>
-    <span class="filter-option">
-        <input type="checkbox" id="writting" checked @change="setFilter">
-        <label for="writting">Writting</label>
-    </span>
-    <span class="filter-option">
-        <input type="checkbox" id="plastic" checked @change="setFilter">
-        <label for="plastic">Plastic Arts</label>
-    </span>
-    <span class="filter-option">
-        <input type="checkbox" id="acting" checked @change="setFilter">
-        <label for="acting">Acting</label>
-    </span>
+    <div class="filters-container">
+        <span class="filter-option">
+            <input type="checkbox" id="music" checked @change="setFilter">
+            <label for="music">Music</label>
+        </span>
+        <span class="filter-option">
+            <input type="checkbox" id="writting" checked @change="setFilter">
+            <label for="writting">Writting</label>
+        </span>
+        <span class="filter-option">
+            <input type="checkbox" id="plastic" checked @change="setFilter">
+            <label for="plastic">Plastic Arts</label>
+        </span>
+        <span class="filter-option">
+            <input type="checkbox" id="acting" checked @change="setFilter">
+            <label for="acting">Acting</label>
+        </span>
+    </div>
 </template>
 
 <script>
@@ -48,5 +50,22 @@ export default {
 </script>
 
 <style scoped>
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.filter-option label {
+    font-size: .8rem;
+}
+
+@media screen and (min-width: 800px) {
+    .filters-container {
+        width: 100%;
+    }
+}
 
 </style>
