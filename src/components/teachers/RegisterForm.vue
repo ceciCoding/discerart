@@ -6,26 +6,39 @@
             v-model="name"></base-input>
         <base-input 
             name="description" 
-            type="textarea" 
+            typeOfInpt="textarea" 
             rows="5" 
             labelText="Your ad's description" 
-            v-model="description"></base-input>
+            v-model="description"></base-input> 
         <base-input 
             name="fee" 
-            type="number" 
+            typeOfInpt="number" 
             labelText="Your hourly fee" 
             v-model.number="fee"></base-input>
         <div>
-            <h6>Choose your area of expertise</h6>
-                <input type="radio" name="music" value="Music" v-model="area">
-                <label for="music">Music</label>
-                <input type="radio" name="writting" value="Writting" v-model="area">
-                <label for="writting">Writting</label>
-                <input type="radio" name="plastic" value="Plastic Arts" v-model="area">
-                <label for="plastic">Plastic Arts</label>
-                <input type="radio" name="acting" value="Acting" v-model="area">
-                <label for="acting">Acting</label>
+            <label for="picture">Your profile picture</label>
+            <input type="file" name="picture" accept=".jpg, .png, .webp, .jpeg">
+        </div> 
+        <h6>Choose your area of expertise</h6>
+        <div class="radio-opts">
+                <div>
+                    <input type="radio" name="music" value="Music" v-model="area">
+                    <label for="music">Music</label>
+                </div>
+                <div>
+                    <input type="radio" name="writting" value="Writting" v-model="area">
+                    <label for="writting">Writting</label>
+                </div>
+                <div>
+                    <input type="radio" name="plastic" value="Plastic Arts" v-model="area">
+                    <label for="plastic">Plastic Arts</label>
+                </div>
+                <div>
+                    <input type="radio" name="acting" value="Acting" v-model="area">
+                    <label for="acting">Acting</label>
+                </div>
         </div>
+        <base-button id="register">Register</base-button>
     </form>
 </template>
 
@@ -54,3 +67,28 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+form {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.radio-opts > div {
+    margin-bottom: .6rem;
+    font-size: .8rem;
+}
+
+#register {
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+@media screen and (min-width: 800px) {
+    form {
+        margin: 0;
+    }
+}
+</style>

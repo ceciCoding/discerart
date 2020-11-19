@@ -68,6 +68,10 @@ h3 {
     margin-top: 0;
 }
 
+label {
+    font-size: .7rem;
+}
+
 /* desktop and tablets*/ 
 @media screen and (min-width: 800px) {
     body {

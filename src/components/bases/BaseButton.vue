@@ -32,6 +32,8 @@ button, a {
     padding: .5rem 2rem;
     border-radius: 25px;
     margin: 0 auto;
-    text-decoration: none
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
 }
 </style>
