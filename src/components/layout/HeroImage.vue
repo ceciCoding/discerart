@@ -24,6 +24,10 @@ h3 {
 }
 
 @media screen and (min-width: 800px) {
+    .hero-container {
+        grid-column: 1/4;
+    }
+
     img {
         max-width: 100%;
         padding-left: 1.5rem;

@@ -11,7 +11,7 @@ const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', component: TeachersList },
-        { path: '/teachers/:id', component: TeacherDetails, children: [
+        { path: '/teachers/:id', component: TeacherDetails, props: true, children: [
                 { path: 'contact', component: ContactTeacher },
             ]
         },
