@@ -59,7 +59,7 @@ export default {
                 area: this.area
             }
 
-            console.log(formData);
+            this.$emit('save-data', formData);
         }
     }
 }

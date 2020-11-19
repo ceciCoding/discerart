@@ -2,7 +2,7 @@
     <hero-image id="hero-img"></hero-image>
     <section id="register">
         <h1>Register as a teacher</h1>
-        <register-form></register-form>
+        <register-form @save-data="saveData"></register-form>
     </section>
 </template>
 
@@ -12,6 +12,12 @@ import RegisterForm from '../../components/teachers/RegisterForm.vue';
 export default {
     components: {
         RegisterForm
+    },
+
+    methods: {
+        saveData(data) {
+            this.$store.dispatch('teachers/registerTeacher', data);
+        }
     }
 }
 </script>
