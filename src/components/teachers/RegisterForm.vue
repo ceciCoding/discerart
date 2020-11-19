@@ -2,17 +2,17 @@
     <form action="" @submit.prevent="submitForm">
         <div class="form-control" :class="{invalid: !name.isValid}">
             <label for="name">Name</label>
-            <input type="text" name="name" v-model="name.value">
+            <input type="text" name="name" v-model="name.value" @blur="clearInpt('name')">
             <p v-if="!name.isValid">You must provide a name</p>
         </div>
          <div class="form-control" :class="{invalid: !description.isValid}">
             <label for="name">Tell potential students about you and your work</label>
-            <textarea rows="5" name="name" v-model="description.value"></textarea>
+            <textarea rows="5" name="name" v-model="description.value" @blur="clearInpt('description')"></textarea>
             <p v-if="!description.isValid">You must provide a description</p>
         </div>
          <div class="form-control" :class="{invalid: !fee.isValid}">
             <label for="name">Your hourly fee</label>
-            <input type="number" name="name" v-model.number="fee.value">
+            <input type="number" name="name" v-model.number="fee.value" @blur="clearInpt('fee')">
             <p v-if="!fee.isValid">Your fee must be greater than 0</p>
         </div>
         <div>
@@ -92,12 +92,15 @@ export default {
             this.validateForm();
             if(!this.formIsValid) return;
             const formData = {
-                name: this.name,
-                description: this.description,
-                fee: this.fee,
-                area: this.area
+                name: this.name.value,
+                description: this.description.value,
+                fee: this.fee.value,
+                area: this.area.value
             }
             this.$emit('save-data', formData);
+        },
+        clearInpt(input) {
+            this[input].isValid = true;
         }
     }
 }
