@@ -1,7 +1,7 @@
 export default {
     registerTeacher(context, data) {
         const teacherData = {
-            id: 'c3',
+            id: context.rootGetters.userId,
             name: data.name,
             description: data.description,
             fee: data.fee,

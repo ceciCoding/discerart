@@ -9,21 +9,19 @@
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/messages">
-                        <span class="material-icons">inbox</span>
-                        <span class="item-name">Inbox</span>
+                     <router-link to="/register" v-if="!isTeacher">
+                        <span class="material-icons">perm_identity</span>
+                        <span class="item-name">Regsiter</span>
                     </router-link>
-                </li>
-                <!-- <li>
-                     <router-link to="/new-add">
-                        <span class="material-icons">post_add</span>
-                        <span class="item-name">New Ad</span>
-                    </router-link>
-                </li> -->
-                <li>
-                     <router-link to="/register">
+                     <router-link :to="profileLink" v-if="isTeacher">
                         <span class="material-icons">perm_identity</span>
                         <span class="item-name">Profile</span>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/messages" v-if="isTeacher">
+                        <span class="material-icons">inbox</span>
+                        <span class="item-name">Inbox</span>
                     </router-link>
                 </li>
             </ul>
@@ -33,7 +31,17 @@
 
 <script>
 export default {
-    
+    computed: {
+        isTeacher() {
+            return this.$store.getters['teachers/isTeacher'];
+        },
+        userId() {
+            return this.$store.getters['teachers/getUserId']
+        },
+        profileLink() {
+            return '/teachers/' + this.userId;
+        }
+    }
 }
 </script>
 

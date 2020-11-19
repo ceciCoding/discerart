@@ -2,15 +2,15 @@
     <form action="" @submit.prevent="submitForm">
         <div class="form-control">
             <label for="name">Name</label>
-            <input type="text" name="name" v-model="name">
+            <input type="text" name="name" v-model="name.value">
         </div>
          <div class="form-control">
             <label for="name">Tell potential students about you and your work</label>
-            <textarea rows="5" name="name" v-model="description"></textarea>
+            <textarea rows="5" name="name" v-model="description.value"></textarea>
         </div>
          <div class="form-control">
             <label for="name">Your hourly fee</label>
-            <input type="number" name="name" v-model.number="fee">
+            <input type="number" name="name" v-model.number="fee.value">
         </div>
         <div>
             <label for="picture">Your profile picture</label>
@@ -19,19 +19,19 @@
         <h6>Choose your area of expertise</h6>
         <div class="radio-opts">
                 <div>
-                    <input type="radio" name="music" value="Music" v-model="area">
+                    <input type="radio" name="music" value="Music" v-model="area.value">
                     <label for="music">Music</label>
                 </div>
                 <div>
-                    <input type="radio" name="writting" value="Writting" v-model="area">
+                    <input type="radio" name="writting" value="Writting" v-model="area.value">
                     <label for="writting">Writting</label>
                 </div>
                 <div>
-                    <input type="radio" name="plastic" value="Plastic Arts" v-model="area">
+                    <input type="radio" name="plastic" value="Plastic Arts" v-model="area.value">
                     <label for="plastic">Plastic Arts</label>
                 </div>
                 <div>
-                    <input type="radio" name="acting" value="Acting" v-model="area">
+                    <input type="radio" name="acting" value="Acting" v-model="area.value">
                     <label for="acting">Acting</label>
                 </div>
         </div>
@@ -43,22 +43,54 @@
 export default {
     data() {
         return {
-            name: '',
-            description: '',
-            fee: null,
-            area: '',  
+            name: {
+                value: '',
+                isValid: true
+            },
+            description: {
+                value: '',
+                isValid: true
+            },
+            fee: {
+                value: null,
+                isValid: true
+            },
+            area: {
+                value: '',
+                isValid: true
+            }, 
+            formIsValid: true
         }
     },
 
     methods: {
+        validateForm() {
+            this.formIsValid = true;
+            if (this.name.value === '') {
+                this.name.isValid = false;
+                this.formIsValid = false;
+            }
+            if (this.description.value === '') {
+                this.description.isValid = false;
+                this.formIsValid = false;
+            }
+            if (!this.fee.value || this.fee.value < 0) {
+                this.fee.isValid = false;
+                this.formIsValid = false;
+            }
+            if (this.area.value.length === 0 ) {
+                this.fee.isValid = false;
+                this.formIsValid = false;
+            }
+        },
         submitForm() {
+            this.validateForm()
             const formData = {
                 name: this.name,
                 description: this.description,
                 fee: this.fee,
                 area: this.area
             }
-
             this.$emit('save-data', formData);
         }
     }
