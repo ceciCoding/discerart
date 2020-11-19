@@ -79,6 +79,7 @@ label {
     margin-bottom: 1.5rem;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 2rem;
 }
 
 .form-control label {
@@ -93,7 +94,6 @@ label {
     -webkit-box-shadow: 5px 5px 0px 0px var(--app-green);
     -moz-box-shadow: 5px 5px 0px 0px var(--app-green);
     box-shadow: 5px 5px 0px 0px var(--app-green);
-    margin-bottom: 2rem;
     font-family: inherit;
     color: inherit;
 }

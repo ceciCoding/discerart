@@ -1,23 +1,26 @@
 <template>
     <form action="" @submit.prevent="submitForm">
-        <div class="form-control">
+        <div class="form-control" :class="{invalid: !name.isValid}">
             <label for="name">Name</label>
             <input type="text" name="name" v-model="name.value">
+            <p v-if="!name.isValid">You must provide a name</p>
         </div>
-         <div class="form-control">
+         <div class="form-control" :class="{invalid: !description.isValid}">
             <label for="name">Tell potential students about you and your work</label>
             <textarea rows="5" name="name" v-model="description.value"></textarea>
+            <p v-if="!description.isValid">You must provide a description</p>
         </div>
-         <div class="form-control">
+         <div class="form-control" :class="{invalid: !fee.isValid}">
             <label for="name">Your hourly fee</label>
             <input type="number" name="name" v-model.number="fee.value">
+            <p v-if="!fee.isValid">Your fee must be greater than 0</p>
         </div>
         <div>
             <label for="picture">Your profile picture</label>
             <input type="file" name="picture" accept=".jpg, .png, .webp, .jpeg">
         </div> 
         <h6>Choose your area of expertise</h6>
-        <div class="radio-opts">
+        <div class="radio-opts" :class="{invalid: !fee.isValid}">
                 <div>
                     <input type="radio" name="music" value="Music" v-model="area.value">
                     <label for="music">Music</label>
@@ -34,7 +37,9 @@
                     <input type="radio" name="acting" value="Acting" v-model="area.value">
                     <label for="acting">Acting</label>
                 </div>
+                <p v-if="!area.isValid">Your must select an area of expertise</p>
         </div>
+        <p v-if="!formIsValid">Please correct the errors above before submiting.</p>
         <base-button id="register">Register</base-button>
     </form>
 </template>
@@ -84,7 +89,8 @@ export default {
             }
         },
         submitForm() {
-            this.validateForm()
+            this.validateForm();
+            if(!this.formIsValid) return;
             const formData = {
                 name: this.name,
                 description: this.description,
@@ -113,6 +119,19 @@ form {
 #register {
     margin: 0 auto;
     margin-top: 3rem;
+}
+
+.invalid label {
+    color: red;
+}
+
+.invalid input, 
+.invalid textarea {
+    border: 1px solid red;
+}
+
+p {
+    font-size: .8rem;
 }
 
 @media screen and (min-width: 800px) {
