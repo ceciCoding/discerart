@@ -4,9 +4,10 @@ export default {
             id: new Date().toISOString(),
             teacherId: data.teacherId,
             name: data.name,
-            email: data.email,
+            userEmail: data.email,
             message: data.message
         }
+        console.log(newMessage);
         context.commit('addMessage', newMessage);
     }
 }

@@ -7,7 +7,7 @@
         <ul v-if="hasMessages">
             <message-item v-for="message in receivedMessages" 
             :key="message.id" 
-            :email="message.email"
+            :email="message.userEmail"
             :message="message.message"></message-item>
         </ul>
         <h3 v-else>You haven't recieved any messages yet</h3>
