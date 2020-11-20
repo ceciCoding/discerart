@@ -1,8 +1,10 @@
 <template>
+    <base-modal :show="!!error" title="There has been an error" @close="handleError">
+        <p>{{ error }}</p>
+    </base-modal>
     <section class="hero">
         <hero-image></hero-image>
         <div id="search">
-            <!-- <base-input name="search" inpt-placeholder="search"></base-input>-->
             <div class="form-control">
                 <input type="text" id="search-inpt">
                 <span class="material-icons">search</span>
@@ -15,7 +17,7 @@
         <div v-if="isLoading">
             <base-spinner></base-spinner>
         </div>
-        <ul v-if="hasTeachers && !isLoading">
+        <ul v-else-if="hasTeachers">
                 <teacher-item v-for="teacher in filteredTeachers" 
                     :key="teacher.id" 
                     :id="teacher.id" 
@@ -25,7 +27,7 @@
                     :fee="teacher.fee">
                 </teacher-item>
         </ul>
-        <h3 v-else-if="!loadTeachers">No teachers were found</h3>
+        <h3 v-else>No teachers were found</h3>
     </section>
 </template>
 
@@ -47,7 +49,8 @@ export default {
                 writting: true,
                 acting: true
             },
-            isLoading: false            
+            isLoading: false,
+            error: null            
         }
     },
 
@@ -70,7 +73,7 @@ export default {
             })
         },
         hasTeachers() {
-            return this.$store.getters['teachers/hasTeachers']
+            return !this.isLoading && this.$store.getters['teachers/hasTeachers']
         }
     },
 
@@ -84,8 +87,15 @@ export default {
         },
         async loadTeachers() {
             this.isLoading = true;
-            await this.$store.dispatch('teachers/loadTeachers');
+            try {
+                await this.$store.dispatch('teachers/loadTeachers');
+            } catch(error) {
+                this.error = error.message || 'Something went wrong';
+            }
             this.isLoading = false;
+        },
+        handleError() {
+            return this.error = null;
         }
     }
 }
