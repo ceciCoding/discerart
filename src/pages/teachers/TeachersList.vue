@@ -70,9 +70,16 @@ export default {
         }
     },
 
+    created() {
+        this.loadTeachers();
+    },
+
     methods: {
         setFilters(updatedFilters) {
             this.activeFilters = updatedFilters;
+        },
+        loadTeachers() {
+            this.$store.dispatch('teachers/loadTeachers');
         }
     }
 }

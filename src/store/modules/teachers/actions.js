@@ -25,7 +25,7 @@ export default {
         });
     },
 
-    async loadTeachers(context, data) {
+    async loadTeachers(context) {
         const response = await fetch(`https://discerart.firebaseio.com/teachers.json`);
         const responseData = await response.json();
 
