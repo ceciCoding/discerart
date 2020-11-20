@@ -2,9 +2,9 @@
     <li class="teacher-item">
             <router-link :to="teacherDetailsLink">
                 <base-card>
-                    <div class="img-container">
+                    <!-- <div class="img-container">
                         <img src="../../assets/t1.jpg" alt="teacher's photo">
-                    </div>
+                    </div> -->
                     <h3>{{ name }}</h3>
                     <h5>{{ area }}</h5>
                     <div class="teacher-descr">

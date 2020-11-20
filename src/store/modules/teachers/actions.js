@@ -10,7 +10,7 @@ export default {
 
         const response = await fetch(`https://discerart.firebaseio.com/teachers/${userId}.json`, {
             method: 'PUT',
-            body: JSON.stringify(teacherData);
+            body: JSON.stringify(teacherData)
         });
 
         //const responseData = await response.json();
@@ -23,5 +23,28 @@ export default {
             ...teacherData,
             id: userId
         });
+    },
+
+    async loadTeachers(context, data) {
+        const response = await fetch(`https://discerart.firebaseio.com/teachers.json`);
+        const responseData = await response.json();
+
+        if (!response.ok) {
+            //handle errors
+        }
+
+        const teachers = [];
+
+        for (const key in responseData) {
+            const teacher = {
+                name: responseData[key].name,
+                description: responseData[key].description,
+                fee: responseData[key].fee,
+                area: responseData[key].area
+            }
+            teachers.push(teacher);
+        }
+
+        context.commit('setTeachers', teachers);
     }
 };
