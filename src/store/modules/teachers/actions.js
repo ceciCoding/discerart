@@ -26,6 +26,9 @@ export default {
     },
 
     async loadTeachers(context) {
+        //for handling cached data
+        if (!context.getters.shouldUpdate) return;
+
         const response = await fetch(`https://discerart.firebaseio.com/teachers.json`);
         const responseData = await response.json();
 
@@ -47,5 +50,6 @@ export default {
         }
 
         context.commit('setTeachers', teachers);
+        context.commit('setLastFetchDate');
     }
 };

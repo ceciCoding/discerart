@@ -4,5 +4,8 @@ export default {
     },
     setTeachers(state, data) {
         state.teachers = data;
+    },
+    setLastFetchDate(state) {
+        state.lastFetch = new Date().getTime();
     }
 };
