@@ -1,21 +1,23 @@
 <template>
   <teleport to="body">
     <div v-if="show" @click="tryClose" class="backdrop"></div>
-    <dialog open v-if="show">
-      <header>
-        <slot name="header">
-          <h2>{{ title }}</h2>
-        </slot>
-      </header>
-      <section>
-        <slot></slot>
-      </section>
-      <menu v-if="!fixed">
-        <slot name="actions">
-          <base-button @click="tryClose">Close</base-button>
-        </slot>
-      </menu>
-    </dialog>
+    <transition name="modal">
+      <dialog open v-if="show">
+        <header>
+          <slot name="header">
+            <h2>{{ title }}</h2>
+          </slot>
+        </header>
+        <section>
+          <slot></slot>
+        </section>
+        <menu v-if="!fixed">
+          <slot name="actions">
+            <base-button @click="tryClose">Close</base-button>
+          </slot>
+        </menu>
+      </dialog>
+    </transition>
   </teleport>
 </template>
 
@@ -100,6 +102,26 @@ menu {
 button {
   color: var(--app-green);
   background-color: var(--app-yellow);
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+  transform: scale(.8);
+}
+
+.modal-enter-to,
+.modal-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-enter-active {
+  transition: all .4s ease-out;
+}
+
+.modal-leave-active {
+  transition: all .4s ease-in;
 }
 
 @media (min-width: 768px) {
