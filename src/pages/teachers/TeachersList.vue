@@ -12,7 +12,10 @@
     </section>
     <section class="main-section teachers-container">
         <h1>Teachers</h1>
-        <ul v-if="hasTeachers">
+        <div v-if="isLoading">
+            <base-spinner></base-spinner>
+        </div>
+        <ul v-if="hasTeachers && !isLoading">
                 <teacher-item v-for="teacher in filteredTeachers" 
                     :key="teacher.id" 
                     :id="teacher.id" 
@@ -22,7 +25,7 @@
                     :fee="teacher.fee">
                 </teacher-item>
         </ul>
-        <h3 v-else>No teachers were found</h3>
+        <h3 v-else-if="!loadTeachers">No teachers were found</h3>
     </section>
 </template>
 
@@ -43,7 +46,8 @@ export default {
                 plastic: true,
                 writting: true,
                 acting: true
-            }            
+            },
+            isLoading: false            
         }
     },
 
@@ -78,8 +82,10 @@ export default {
         setFilters(updatedFilters) {
             this.activeFilters = updatedFilters;
         },
-        loadTeachers() {
-            this.$store.dispatch('teachers/loadTeachers');
+        async loadTeachers() {
+            this.isLoading = true;
+            await this.$store.dispatch('teachers/loadTeachers');
+            this.isLoading = false;
         }
     }
 }

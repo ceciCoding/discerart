@@ -6,6 +6,7 @@ import App from './App.vue';
 import BaseCard from './components/bases/BaseCard.vue';
 import BaseButton from './components/bases/BaseButton.vue';
 import HeroImage from './components/layout/HeroImage.vue';
+import BaseSpinner from './components/bases/BaseSpinner.vue';
 
 const app = createApp(App);
 
@@ -13,5 +14,7 @@ app.use(router);
 app.use(store);
 app.component('base-card', BaseCard);
 app.component('base-button', BaseButton);
-app.component('hero-image', HeroImage)
+app.component('hero-image', HeroImage);
+app.component('base-spinner', BaseSpinner);
+
 app.mount('#app');
