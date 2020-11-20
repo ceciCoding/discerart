@@ -10,7 +10,7 @@
             <filter-teachers @change-filter="setFilters"></filter-teachers>
         </div>
     </section>
-    <section class="teachers-container">
+    <section class="main-section teachers-container">
         <h1>Teachers</h1>
         <ul v-if="hasTeachers">
                 <teacher-item v-for="teacher in filteredTeachers" 
@@ -122,11 +122,6 @@ export default {
     #search {
         width: 100%;
     }
-
-    .teachers-container {
-        grid-column: 5/13;
-    
-}
 
     .teachers-container ul {
         /* display: grid;

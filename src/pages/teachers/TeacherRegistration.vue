@@ -1,6 +1,6 @@
 <template>
     <hero-image id="hero-img"></hero-image>
-    <section id="register">
+    <section id="register" class="main-section">
         <h1>Register as a teacher</h1>
         <register-form @save-data="saveData"></register-form>
     </section>
@@ -22,19 +22,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-#hero-img {
-    display: none;
-}
-
-@media screen and (min-width: 800px) {
-    #hero-img {
-        display: block;
-    }
-
-    #register {
-        grid-column: 6/12;
-    }
-}
-</style>

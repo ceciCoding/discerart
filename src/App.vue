@@ -98,6 +98,10 @@ label {
     color: inherit;
 }
 
+#hero-img {
+    display: none;
+}
+
 /* desktop and tablets*/ 
 @media screen and (min-width: 800px) {
     body {
@@ -105,6 +109,10 @@ label {
         padding-right: 50px;
         max-width: 2000px;
         margin: 2rem auto;
+    }
+
+    .main-section {
+        grid-column: 6/13;
     }
 
     #app {
@@ -115,6 +123,10 @@ label {
 
     h1 {
         text-align: left;
+    }
+
+    #hero-img {
+        display: block;
     }
 }
 </style>
