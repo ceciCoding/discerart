@@ -1,10 +1,14 @@
 <template>
+    <base-modal :show="!!error" title="There has been an error" @close="handleError">
+        <p>{{ error }}</p>
+    </base-modal>
     <hero-image id="hero-img"></hero-image>
     <section class="main-section">
         <header>
             <h1> Messages</h1>
         </header>
-        <ul v-if="hasMessages">
+        <base-spinner v-if="isLoading"></base-spinner>
+        <ul v-else-if="hasMessages">
             <message-item v-for="message in receivedMessages" 
             :key="message.id" 
             :email="message.userEmail"
@@ -22,12 +26,39 @@ export default {
         MessageItem
     },
 
+    data() {
+        return {
+            isLoading: false,
+            error: null
+        }
+    },
+
     computed: {
         receivedMessages() {
             return this.$store.getters['messages/messages'];
         },
         hasMessages() {
-            return this.$store.getters['messages/hasMessages'];
+            return !this.isLoading && this.$store.getters['messages/hasMessages'];
+        }
+    },
+
+    created() {
+        this.loadMessages();
+    },
+
+    methods: {
+        async loadMessages() {
+            this.isLoading = true;
+            try {
+                this.$store.dispatch('messages/fetchMessages');
+                
+            } catch(error) {
+                this.error = error.message || 'Something went wrong';
+            }
+            this.isLoading = false;
+        },
+        handleError() {
+            this.error = null;
         }
     }
 }
