@@ -1,5 +1,5 @@
 <template>
-    <the-header></the-header>
+    <the-header v-if="isNotLogin"></the-header>
     <router-view></router-view>
 </template>
 
@@ -9,6 +9,12 @@ import TheHeader from './components/layout/TheHeader.vue';
 export default {
     components: {
         TheHeader
+    },
+
+    computed: {
+        isNotLogin() {
+            return !this.$route.path.includes('login');
+        }
     }
 }
 </script>
@@ -48,6 +54,10 @@ body {
     margin-bottom: 3rem;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 ul {
     list-style: none;

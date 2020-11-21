@@ -5,6 +5,7 @@ import TeachersList from './pages/teachers/TeachersList.vue';
 import ContactTeacher from './pages/messages/ContactTeacher.vue';
 import ReceivedMessages from './pages/messages/ReceivedMessages.vue';
 import TeacherRegistration from './pages/teachers/TeacherRegistration.vue';
+import UserAuth from './pages/auth/UserAuth.vue';
 import NotFound from './pages/NotFound.vue'
 
 const router = createRouter({
@@ -16,6 +17,7 @@ const router = createRouter({
                 { path: 'contact', component: ContactTeacher },
             ]
         },
+        { path: '/login', component: UserAuth},
         { path: '/register', component: TeacherRegistration },
         { path: '/messages', component: ReceivedMessages },
         { path: '/:notFound(.*)', component: NotFound }

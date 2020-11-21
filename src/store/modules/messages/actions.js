@@ -9,7 +9,7 @@ export default {
             method: 'POST',
             body: JSON.stringify(newMessage)
         });
-        
+
         const responseData = await response.json();
 
         if (!response.ok) {
@@ -22,7 +22,7 @@ export default {
         context.commit('addMessage', newMessage);
     },
 
-    async fetchMessage(context) {
+    async fetchMessages(context) {
         const teacherId = context.rootGetters.userId;
         const response = await fetch(`https://discerart.firebaseio.com/messages/${teacherId}.json`);
         const responseData = await response.json();
