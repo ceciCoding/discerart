@@ -1,8 +1,9 @@
 <template>
     <div class="login-hero">
-        <hero-image></hero-image>
+        <hero-image id="login-hero"></hero-image>
     </div>
     <form action="">
+        <h2>discerart</h2>
         <div class="form-control">
             <label for="email">Email</label>
             <input type="text" name="email">
@@ -35,7 +36,26 @@ span {
 
 @media screen and (min-width: 800px) {
     .login-hero {
-        
+        grid-column: 6/13;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        background-color: var(--app-green);
+        color: var(--app-yellow);
+        height: 100vh;
+        width: 100%; 
+    }
+
+    form {
+        grid-column: 1/6;
+        grid-row: 1/2;
+        align-self: center;
+        justify-self: center;
+        width: 60%;
+    }
+
+    .hero-container {
+        width: 80%;
     }
 }
 </style>

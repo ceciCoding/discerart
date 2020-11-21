@@ -1,5 +1,5 @@
 <template>
-    <the-header v-if="isNotLogin"></the-header>
+    <the-header v-if="!isLogin"></the-header>
     <router-view></router-view>
 </template>
 
@@ -12,11 +12,18 @@ export default {
     },
 
     computed: {
-        isNotLogin() {
-            return !this.$route.path.includes('login');
+        isLogin() {
+            return this.$route.path.includes('login');
+        }
+    },
+
+    watch: {
+        isLogin() {
+            return document.body.className = 'auth';
         }
     }
 }
+
 </script>
 
 <style>
@@ -119,6 +126,11 @@ label {
         padding-right: 50px;
         max-width: 2000px;
         margin: 2rem auto;
+    }
+
+    .auth {
+        margin: 0;
+        padding: 0;
     }
 
     .main-section {
