@@ -9,6 +9,7 @@ export default {
             method: 'POST',
             body: JSON.stringify(newMessage)
         });
+        
         const responseData = await response.json();
 
         if (!response.ok) {

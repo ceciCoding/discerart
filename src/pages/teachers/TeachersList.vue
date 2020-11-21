@@ -6,7 +6,7 @@
         <hero-image></hero-image>
         <div id="search">
             <div class="form-control">
-                <input type="text" id="search-inpt">
+                <input type="text" id="search-inpt" placeholder="search">
                 <span class="material-icons">search</span>
             </div>
             <filter-teachers @change-filter="setFilters"></filter-teachers>
@@ -124,6 +124,7 @@ export default {
 
 #search-inpt {
     margin-bottom: .5rem;
+    color: inherit;
 }
 
 .material-icons {

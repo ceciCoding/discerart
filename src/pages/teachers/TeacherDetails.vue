@@ -25,7 +25,7 @@ export default {
 
     computed:{
         contactLink() {
-            return this.$route.path + '/contact';
+            return this.$route.path + '/' + this.id + '/contact';
         },
         name() {
             return this.selectedTeacher.name;

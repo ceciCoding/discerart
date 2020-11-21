@@ -1,5 +1,5 @@
 <template>
-    <form action="" @submit.prevent="submitForm">
+    <form @submit.prevent="submitForm">
         <div class="form-control" :class="{invalid: !name.isValid}">
             <label for="name">Name</label>
             <input type="text" name="name" v-model="name.value" @blur="clearInpt('name')">

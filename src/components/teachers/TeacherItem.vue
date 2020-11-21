@@ -22,10 +22,10 @@ export default {
     props: ['id', 'name', 'area', 'description', 'fee'],
     computed: {
         contactTeacherLink() {
-            return this.$route.path + 'teachers/' + this.id + '/contact';
+            return this.$route.path + '/' + this.id + '/contact';
         },
         teacherDetailsLink() {
-            return this.$route.path  + 'teachers/' + this.id;
+            return this.$route.path  + '/' + this.id;
         }
     }
 }

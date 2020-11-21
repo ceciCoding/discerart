@@ -13,10 +13,11 @@ export default {
             body: JSON.stringify(teacherData)
         });
 
-        //const responseData = await response.json();
+        const responseData = await response.json();
 
         if (!response.ok) {
-            //error ...
+            const error = new Error(responseData.message || 'Failed to fetch');
+            throw error;
         }
 
         context.commit('registerTeacher', {
@@ -41,6 +42,7 @@ export default {
 
         for (const key in responseData) {
             const teacher = {
+                id: key,
                 name: responseData[key].name,
                 description: responseData[key].description,
                 fee: responseData[key].fee,
