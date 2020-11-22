@@ -28,7 +28,6 @@ export default {
             password: '',
             formIsValid: true,
             mode: 'login',
-            isLoading: false,
             error: null
         }
     },
@@ -40,8 +39,6 @@ export default {
                 this.formIsValid = false;
                 return;
             }
-
-            this.isLoading = true;
 
             const actionData = {
                 email: this.email,
@@ -58,7 +55,7 @@ export default {
                 this.error = error.message || 'Failed to authenticate. Check your login data.';
             }
             
-            this.isLoading = false;
+            return this.$router.replace('/');
 
         },
         switchMode(){

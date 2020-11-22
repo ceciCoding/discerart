@@ -19,7 +19,8 @@ export default {
 
     watch: {
         isLogin() {
-            return document.body.className = 'auth';
+            if (this.isLogin) return document.body.className = 'auth';
+            else return document.body.className = '';
         }
     }
 }

@@ -8,7 +8,9 @@ export default {
             area: data.area
         }
 
-        const response = await fetch(`https://discerart.firebaseio.com/teachers/${userId}.json`, {
+        const token = context.getters.token;
+
+        const response = await fetch(`https://discerart.firebaseio.com/teachers/${userId}.json?auth=${token}`, {
             method: 'PUT',
             body: JSON.stringify(teacherData)
         });
