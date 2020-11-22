@@ -20,7 +20,7 @@
                         <span class="item-name">Inbox</span>
                     </router-link>
                 </li>
-                <li v-if="isAuthenticated">
+                <li v-if="isAuthenticated && !isTeacher">
                     <router-link to="/register">
                         <span class="material-icons">post_add</span>
                         <span class="item-name">Teach</span>

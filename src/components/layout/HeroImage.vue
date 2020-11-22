@@ -1,6 +1,6 @@
 <template>
      <div class="hero-container">
-         <h1>discerart</h1>
+         <h2>discerart</h2>
         <img src="../../assets/04.png" alt="drawing of a color palette">
         <h3>Find your art online teacher</h3>
     </div>

@@ -6,7 +6,7 @@
         <hero-image></hero-image>
         <div id="search">
             <div class="form-control">
-                <input type="text" id="search-inpt" placeholder="search">
+                <input type="text" id="search-inpt" placeholder="search teachers" v-model="search">
                 <span class="material-icons">search</span>
             </div>
             <filter-teachers @change-filter="setFilters"></filter-teachers>
@@ -18,7 +18,7 @@
             <base-spinner></base-spinner>
         </div>
         <ul v-else-if="hasTeachers">
-                <teacher-item v-for="teacher in filteredTeachers" 
+                <teacher-item v-for="teacher in searchTeachers" 
                     :key="teacher.id" 
                     :id="teacher.id" 
                     :name="teacher.name"
@@ -49,6 +49,7 @@ export default {
                 writting: true,
                 acting: true
             },
+            search: '',
             isLoading: false,
             error: null            
         }
@@ -74,6 +75,12 @@ export default {
         },
         hasTeachers() {
             return !this.isLoading && this.$store.getters['teachers/hasTeachers']
+        },
+        searchTeachers() {
+            return this.filteredTeachers.filter(teacher => {
+                return teacher.name.toLowerCase().match(this.search) ||
+                teacher.description.toLowerCase().match(this.search)
+            })
         }
     },
 
