@@ -8,16 +8,6 @@
                         <span class="item-name">Home</span>
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/login" v-if="!isAuthenticated">
-                        <span class="material-icons">login</span>
-                        <span class="item-name">Login</span>
-                    </router-link>
-                    <router-link to="/login" v-if="isAuthenticated" @click="logout">
-                        <span class="material-icons">login</span>
-                        <span class="item-name">Logout</span>
-                    </router-link>
-                </li>
                 <li v-if="isAuthenticated && isTeacher">
                     <router-link :to="profileLink">
                         <span class="material-icons">perm_identity</span>
@@ -34,6 +24,16 @@
                     <router-link to="/register">
                         <span class="material-icons">post_add</span>
                         <span class="item-name">Teach</span>
+                    </router-link>
+                </li>
+                <li>
+                    <router-link to="/login" v-if="!isAuthenticated">
+                        <span class="material-icons">login</span>
+                        <span class="item-name">Login</span>
+                    </router-link>
+                    <router-link to="/login" v-if="isAuthenticated" @click="logout">
+                        <span class="material-icons">login</span>
+                        <span class="item-name">Logout</span>
                     </router-link>
                 </li>
             </ul>
