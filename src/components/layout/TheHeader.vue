@@ -84,7 +84,7 @@ header {
     bottom: 0;
     height: 4rem;
     width: 100vw;
-    padding: 0 3rem;
+    padding: 0 2rem;
     z-index: 20;
 }
 
