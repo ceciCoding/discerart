@@ -1,26 +1,23 @@
 <template>
-    <div>
-        <base-modal></base-modal>
-        <div class="login-hero">
-            <hero-image id="login-hero"></hero-image>
-        </div>
-        <form @submit.prevent="submitForm">
-            <h2>discerart</h2>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="text" name="email" v-model.trim="email">
-            </div>
-            <div class="form-control">
-                <label for="email">Password</label>
-                <input type="password" name="password" v-model.trim="password">
-            </div>
-            <span @click="switchMode" v-if="isLogin">Don't have an account? Create one here</span>
-            <span @click="switchMode" v-if="isSignup">Already have an account? Login</span>
-            <p class="error" v-if="!formIsValid">Please enter a valid email and password (at least 6 characters long)</p>
-            <base-button v-if="isLogin">Login</base-button>
-            <base-button v-if="isSignup">Sign Up</base-button>
-        </form>
+    <div class="login-hero">
+        <hero-image id="login-hero"></hero-image>
     </div>
+    <form @submit.prevent="submitForm">
+        <h2>discerart</h2>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" name="email" v-model.trim="email">
+        </div>
+        <div class="form-control">
+            <label for="email">Password</label>
+            <input type="password" name="password" v-model.trim="password">
+        </div>
+        <span @click="switchMode" v-if="isLogin">Don't have an account? Create one here</span>
+        <span @click="switchMode" v-if="isSignup">Already have an account? Login</span>
+        <p class="error" v-if="!formIsValid">Please enter a valid email and password (at least 6 characters long)</p>
+        <base-button v-if="isLogin">Login</base-button>
+        <base-button v-if="isSignup">Sign Up</base-button>
+    </form>
 </template>
 
 <script>
@@ -43,17 +40,21 @@ export default {
                 this.formIsValid = false;
                 return;
             }
+
             this.isLoading = true;
+
+            const actionData = {
+                email: this.email,
+                password: this.password
+            }
+
             try {
                 if (this.mode === 'login') {
-                //
+                    await this.$store.dispatch('login', actionData);
                 } else {
-                await this.$store.dispatch('signup', {
-                    email: this.email,
-                    password: this.password
-                    });
+                    await this.$store.dispatch('signup', actionData);
                 } 
-            }catch(error) {
+            } catch(error) {
                 this.error = error.message || 'Failed to authenticate. Check your login data.';
             }
             
