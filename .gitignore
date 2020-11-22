@@ -2,6 +2,7 @@
 node_modules
 /dist
 src/assets
+auth_actions.js
 
 # local env files
 .env.local
@@ -30,5 +31,6 @@ package.json
 package-lock.json
 .browserslistrc
 .eslintrc.js
+
 
 

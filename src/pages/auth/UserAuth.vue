@@ -27,7 +27,8 @@ export default {
             email: '',
             password: '',
             formIsValid: true,
-            mode: 'login'
+            mode: 'login',
+            isLoading: false
         }
     },
 
@@ -37,6 +38,15 @@ export default {
             if (this.email === '' || !this.email.includes('@') || this.password.length < 6) {
                 this.formIsValid = false;
                 return;
+            }
+
+            if (this.mode === 'login') {
+                //
+            } else {
+                this.$store.dispatch('signup', {
+                    email: this.email,
+                    password: this.password
+                });
             }
 
         },
