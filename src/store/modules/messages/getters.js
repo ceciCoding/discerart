@@ -4,6 +4,7 @@ export default {
         return state.messages.filter(message => message.teacherId === teacherId);
     },
     hasMessages(_, getters) {
-        return getters.messages && getters.messages.lenght > 0;
+        return getters.messages
+            // && getters.messages.lenght > 0;
     }
 };

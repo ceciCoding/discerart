@@ -25,9 +25,9 @@ export default {
     async fetchMessages(context) {
         const teacherId = context.rootGetters.userId;
         const token = context.rootGetters.token;
-        const response = await fetch(`https://discerart.firebaseio.com/messages/${teacherId}.json=auth=${token}`);
+        const response = await fetch(`https://discerart.firebaseio.com/messages/${teacherId}.json?auth=${token}`);
         const responseData = await response.json();
-
+        console.log(responseData);
         if (!response.ok) {
             const error = new Error(responseData.message || 'Failed to fetch data');
             throw error;

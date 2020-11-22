@@ -47,8 +47,11 @@ export default {
         isTeacher() {
             return this.$store.getters['teachers/isTeacher'];
         },
+        userId() {
+            return this.$store.getters.userId;
+        },
         profileLink() {
-            return '/teachers/' + this.$route.params.id;
+            return '/teachers/' + this.userId;
         },
         isAuthenticated() {
             return this.$store.getters.isAuthenticated;

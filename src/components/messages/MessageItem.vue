@@ -1,8 +1,8 @@
 <template>
     <li>
         <base-card>
-            <div>
-                <a :href="emailLink">{{ email }}</a>
+            <div class="message-container">
+                <a :href="emailLink"><span>From: </span>{{ email }}</a>
             </div>
             <p>{{ message }}</p>
         </base-card>
@@ -20,3 +20,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.message-container span {
+    font-weight: 700;
+}
+</style>
