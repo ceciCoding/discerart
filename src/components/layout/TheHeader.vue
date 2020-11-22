@@ -8,20 +8,28 @@
                         <span class="item-name">Home</span>
                     </router-link>
                 </li>
-                <li>
-                     <router-link to="/register" v-if="!isTeacher">
-                        <span class="material-icons">perm_identity</span>
-                        <span class="item-name">Regsiter</span>
+                <li v-if="!isAuthenticated">
+                    <router-link to="/login">
+                        <span class="material-icons">login</span>
+                        <span class="item-name">Login</span>
                     </router-link>
-                     <router-link :to="profileLink" v-if="isTeacher">
+                </li>
+                <li v-if="isAuthenticated && isTeacher">
+                    <router-link :to="profileLink">
                         <span class="material-icons">perm_identity</span>
                         <span class="item-name">Profile</span>
                     </router-link>
                 </li>
-                <li>
-                    <router-link to="/messages" v-if="isTeacher">
+                <li v-if="isAuthenticated">
+                    <router-link to="/messages">
                         <span class="material-icons">inbox</span>
                         <span class="item-name">Inbox</span>
+                    </router-link>
+                </li>
+                <li v-if="isAuthenticated">
+                    <router-link to="/register">
+                        <span class="material-icons">post_add</span>
+                        <span class="item-name">Teach</span>
                     </router-link>
                 </li>
             </ul>
@@ -37,6 +45,9 @@ export default {
         },
         profileLink() {
             return '/teachers/' + this.$route.params.id;
+        },
+        isAuthenticated() {
+            return this.$store.getters.isAuthenticated;
         }
     }
 }
@@ -82,8 +93,11 @@ header {
 
     .menu-items-container {
         flex-flow: column nowrap;
-        height: 20vh;
         margin-top: 3rem;
+    }
+
+    .menu-items-container li {
+        margin-bottom: 2rem;
     }
 }
 </style>
