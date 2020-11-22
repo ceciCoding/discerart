@@ -22,6 +22,10 @@ export default {
             if (this.isLogin) return document.body.className = 'auth';
             else return document.body.className = '';
         }
+    },
+
+    created() {
+        this.$store.dispatch('autoLogin');
     }
 }
 
