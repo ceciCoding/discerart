@@ -2,9 +2,6 @@
     <hero-image id="hero-img"></hero-image>
     <section class="teacher-info">
         <h1>{{ name }}</h1>
-        <div class="img-container">
-            <img src="../../assets/t1.jpg" alt="teacher's photo">
-        </div>
         <h4>{{ fee }}€/hour</h4>
         <p>{{ description }}</p>
         <h3>Do you need more info? Contact this teacher now!</h3>

@@ -15,10 +15,10 @@
             <input type="number" name="name" v-model.number="fee.value" @blur="clearInpt('fee')">
             <p v-if="!fee.isValid">Your fee must be greater than 0</p>
         </div>
-        <div>
+        <!-- <div>
             <label for="picture">Your profile picture</label>
-            <input type="file" name="picture" accept=".jpg, .png, .webp, .jpeg">
-        </div> 
+            <input type="file" name="picture" accept=".jpg, .png, .webp, .jpeg" @change="onFilePicked">
+        </div>  -->
         <h6>Choose your area of expertise</h6>
         <div class="radio-opts" :class="{invalid: !fee.isValid}">
                 <div>
@@ -95,7 +95,7 @@ export default {
                 name: this.name.value,
                 description: this.description.value,
                 fee: this.fee.value,
-                area: this.area.value
+                area: this.area.value,
             }
             this.$emit('save-data', formData);
         },
