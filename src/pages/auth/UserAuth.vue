@@ -100,7 +100,7 @@ span {
 
 @media screen and (min-width: 800px) {
     .login-hero {
-        grid-column: 6/13;
+        grid-column: 5/13;
         display: flex;
         align-items: center;
         justify-content: center;    
@@ -111,7 +111,7 @@ span {
     }
 
     form {
-        grid-column: 1/6;
+        grid-column: 1/5;
         grid-row: 1/2;
         align-self: center;
         justify-self: center;
@@ -119,7 +119,7 @@ span {
     }
 
     .hero-container {
-        width: 80%;
+        width: 50%;
     }
 }
 </style>

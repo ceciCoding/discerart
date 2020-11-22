@@ -5,7 +5,7 @@
         <h4>{{ fee }}€/hour</h4>
         <p>{{ description }}</p>
         <h3>Do you need more info? Contact this teacher now!</h3>
-        <base-button link :to="contactLink">Contact</base-button>
+        <base-button link :to="contactLink" v-if="!formIsDisplayed">Contact</base-button>
         <router-view></router-view>
     </section>
 </template>
@@ -35,6 +35,9 @@ export default {
         },
         description() {
             return this.selectedTeacher.description;
+        },
+        formIsDisplayed() {
+            return this.$route.path.includes('contact');
         }
     },
 

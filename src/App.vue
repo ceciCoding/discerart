@@ -139,7 +139,7 @@ label {
     }
 
     .main-section {
-        grid-column: 6/13;
+        grid-column: 5/13;
     }
 
     #app {
