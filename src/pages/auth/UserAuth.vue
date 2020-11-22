@@ -51,12 +51,10 @@ export default {
                 } else {
                     await this.$store.dispatch('signup', actionData);
                 } 
+                return this.$router.replace('/');
             } catch(error) {
                 this.error = error.message || 'Failed to authenticate. Check your login data.';
             }
-            
-            return this.$router.replace('/');
-
         },
         switchMode(){
             if (this.mode === 'login') {

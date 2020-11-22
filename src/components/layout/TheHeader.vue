@@ -8,10 +8,14 @@
                         <span class="item-name">Home</span>
                     </router-link>
                 </li>
-                <li v-if="!isAuthenticated">
-                    <router-link to="/login">
+                <li>
+                    <router-link to="/login" v-if="!isAuthenticated">
                         <span class="material-icons">login</span>
                         <span class="item-name">Login</span>
+                    </router-link>
+                    <router-link to="/login" v-if="isAuthenticated" @click="logout">
+                        <span class="material-icons">login</span>
+                        <span class="item-name">Logout</span>
                     </router-link>
                 </li>
                 <li v-if="isAuthenticated && isTeacher">
@@ -49,8 +53,16 @@ export default {
         isAuthenticated() {
             return this.$store.getters.isAuthenticated;
         }
+    }, 
+
+    methods: {
+        logout() {
+            this.$store.dispatch('logout');
+            this.$router.redirect('/');
+        }
     }
 }
+
 </script>
 
 <style scoped>
