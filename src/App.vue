@@ -14,6 +14,9 @@ export default {
     computed: {
         isLogin() {
             return this.$route.path.includes('login');
+        },
+        isSafari() {
+            return navigator.userAgent.includes('Safari');
         }
     },
 
@@ -93,6 +96,7 @@ h3 {
 label {
     font-size: .7rem;
 }
+
 
 .form-control {
     position: relative;

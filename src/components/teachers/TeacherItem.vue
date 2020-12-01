@@ -80,6 +80,7 @@ a {
         width: auto;
         max-width: 320px;
         margin-bottom: 0;
+        margin-right: 2rem;
     } 
 }
 

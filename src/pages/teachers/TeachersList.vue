@@ -155,12 +155,9 @@ export default {
     }
 
     .teachers-container ul {
-        /* display: grid;
-        grid-auto-columns: auto;
-        gap: 1.2rem; */
         display: flex;
         flex-flow: row wrap;
-        gap: 2rem;
+        /* gap: 2rem; */
     }
 
     .teachers-container h1 {
